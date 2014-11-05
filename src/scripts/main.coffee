@@ -1,6 +1,6 @@
 App = 
 
-  thing: () ->
+  toggleNav: () ->
     if $(".container").hasClass('mobile-closed')
       $(".container").removeClass('mobile-closed').addClass('mobile-open').animate
           left: "-180px"
@@ -13,7 +13,10 @@ App =
   init: () ->
 
     $(document).on 'click', '.burger', ->
-      App.thing()
+      App.toggleNav()
+
+    $(document).on 'click', '.cover', ->
+      App.toggleNav()
 
     $(document).on 'click', '.mobile-nav a', ->
       $(".container").attr('class', 'container mobile-closed').animate
