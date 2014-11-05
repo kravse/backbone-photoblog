@@ -1,0 +1,394 @@
+
+//- --------------------------------------------------------
+//- Main
+//- --------------------------------------------------------
+nav-height = 45px
+site-orange = #ff7700
+
+body
+  
+  p, li
+    font-family: 'Lato', 'helvetica', sans-serif
+    font-weight: 400
+    font-size: 15px
+    line-height: 100%
+    
+.pages
+  display: none
+
+.mobile-nav
+  
+  position: absolute
+  width: 180px
+  height: 100%
+  right: 0
+  top: 0
+  background: #f5f5f5
+  border-left: 2px solid #e5e5e5
+  box-shadow: inset 3px 0px 9px 0px rgba(229, 229, 229, 0.75)
+  padding: 10px
+  
+  
+  li
+    display: block
+    
+    a.logo
+      display: block
+      background-image: url('../images/logo-sprite.png') 
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: 100%
+      width: 100px
+      height: 24px
+      margin-top: 1px
+      margin-bottom: 10px
+    
+    a
+      font-size: 20px
+      font-weight: 300
+      line-height: nav-height
+      color: #505050
+      padding-bottom: 1px
+      
+    
+.content
+  position: absolute
+  top: nav-height+15px
+  left: 0
+  width: 100%
+  z-index: 2
+
+.container
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: #fff
+  
+.container.mobile-open
+  
+  .arrow-left
+    margin-left: -180px
+  
+  .arrow-right
+    margin-right: 180px
+  
+.archive-page
+  
+  li.archive-item
+    
+    a
+      border-bottom: 1px solid site-orange
+
+.about-page
+  
+  li.about-item
+    
+    a
+      border-bottom: 1px solid site-orange
+  
+.project-page
+  
+  li.project-item
+    
+    a
+      border-bottom: 1px solid site-orange
+  
+.nav
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  margin: 0
+  height: nav-height
+  z-index: 1
+  background: #f5f5f5
+  border-bottom: 1px solid #e5e5e5
+  
+  a.logo
+    display: block
+    background-image: url('../images/logo-sprite.png') 
+    background-repeat: no-repeat
+    background-position: 0 0
+    background-size: 100%
+    width: 100px
+    height: 24px
+    margin-top: 10px
+    
+    &:hover
+      background-position: 0 -24px
+  
+  li.mobile
+   
+    +media('mobile')
+      display: inline-block
+  
+  li.burger
+    display: none
+    position: relative
+    float:right
+    width: 45px
+    height: 45px
+    float: right
+    margin-left: 0
+    
+    +media('mobile')
+      display: inline-block
+    a
+      position: absolute
+      display: block
+      width: 43px
+      height: 45px
+      border-radius: 6px
+      
+      span
+        display: block
+        position: absolute
+        width: 28px
+        height: 3px
+        background: #000
+        top: 50%
+        margin-top: -2px
+        margin-left: -14px
+        left: 50%
+      
+      &:before 
+        content: ''
+        position: absolute
+        width: 28px
+        height: 3px
+        top: 30%
+        margin-top: -2px
+        left: 50%
+        margin-left: -14px
+        display: block
+        background: #000
+      
+      &:after 
+        content: ''
+        position: absolute
+        width: 28px
+        height: 3px
+        bottom: 30%
+        margin-bottom: -1px
+        left: 50%
+        margin-left: -14px
+        display: block
+        background: #000
+      
+  .open 
+    
+    li.burger 
+      
+      a
+        span 
+          -webkit-animation: aniburger-middle 1s
+          -moz-animation: aniburger-middle 1s
+          -o-animation: aniburger-middle 1s
+          -ms-animation: aniburger-middle 1s
+          animation: aniburger-middle 1s
+          -webkit-animation-fill-mode: forwards
+          -moz-animation-fill-mode: forwards
+          -o-animation-fill-mode: forwards
+          -ms-animation-fill-mode: forwards
+          animation-fill-mode: forwards
+          
+        &:before 
+          -webkit-animation: aniburger-top 1s
+          -moz-animation: aniburger-top 1s
+          -o-animation: aniburger-top 1s
+          -ms-animation: aniburger-top 1s
+          animation: aniburger-top 1s
+          -webkit-animation-fill-mode: forwards
+          -moz-animation-fill-mode: forwards
+          -o-animation-fill-mode: forwards
+          -ms-animation-fill-mode: forwards
+          animation-fill-mode: forwards
+        
+        &:after 
+          -webkit-animation: aniburger-bottom 1s
+          -moz-animation: aniburger-bottom 1s
+          -o-animation: aniburger-bottom 1s
+          -ms-animation: aniburger-bottom 1s
+          animation: aniburger-bottom 1s
+          -webkit-animation-fill-mode: forwards
+          -moz-animation-fill-mode: forwards
+          -o-animation-fill-mode: forwards
+          -ms-animation-fill-mode: forwards
+          animation-fill-mode: forwards
+    
+  
+  li
+    display: inline-block
+    margin-left: 15px
+    float: left
+    
+    +media('mobile')
+      display: none
+    
+    a
+      font-size: 20px
+      font-weight: 300
+      line-height: nav-height
+      color: #505050
+      padding-bottom: 1px
+      
+      &:hover
+        color:  site-orange
+  
+  li.instagram
+    float: right
+    margin-right: 10px
+    
+    a
+      color: #505050
+      font-size: 15px
+      font-weight: 300
+      
+      +media('mobile')
+        font-size: 35px
+        color:  site-orange
+        line-height: 37px
+      
+      &:hover
+        color:  site-orange
+        
+.standard-width
+  position: absolute
+  top: 0
+  left: 50%
+  margin-left: -500px
+  width: 1000px
+  padding: 0 64px
+  
+  +media('max', 1125px)
+    width: 86%
+    margin-left: -43%
+  
+  +media('mobile')
+    padding: 0
+    
+.image
+  background-position: center top
+  background-size: contain
+  background-repeat: no-repeat
+  padding-bottom: 60%
+    
+.arrow
+  background-image: url('../images/arrows.png')
+  background-repeat: no-repeat
+  position: fixed
+  display: block
+  background-size: 128px
+  top: 250px
+  overflow:hidden
+  width: 64px
+  height: 64px
+  opacity: 0.6
+  transition: margin 0.5s ease-in-out
+  
+  
+  +media('max', 1125px)
+    top: 150px
+  
+  +media('mobile')
+    width: 32px
+    height: 32px
+    background-size: 64px
+    margin-top: -15px
+
+.arrow-left
+    background-position: 0 0
+    left: -10px
+  
+    +media('mobile')
+      left: 0
+
+    &:hover
+      background-position: 0 -64px
+      
+      +media('mobile')
+        background-position: 0 -32px
+
+.arrow-right
+  background-position: -64px 0
+  right: -10px
+  
+  +media('mobile')
+    right: 0
+    background-position: -32px 0
+  
+  &:hover
+    background-position: -64px -64px
+    
+    +media('mobile')
+      background-position: -32px -32px
+    
+.archive
+  padding-bottom: 30px
+    
+  .columns.archive-pod
+    
+    +media('mobile')
+      padding: 0
+    
+    .image-container
+      display: block
+      border: 2px solid transparent
+      margin: 10px
+      
+      +media('mobile')
+        margin: 4px
+          
+      &:hover
+        border: 2px solid site-orange
+
+.about
+  max-width: 640px
+  width: 100%
+  padding: 0 15px  
+  
+  p
+    line-height: 1.6em
+    font-family: 'Lato', 'helvetica', sans-serif
+    font-weight: 300
+    
+    a
+      color: site-orange
+      
+      &:hover
+        text-decoration: underline
+    
+.projects
+  .galleries
+    font-family: 'Lato', 'helvetica', sans-serif
+    font-weight: 300
+    font-size: 17px
+    display: block
+    text-align: center
+    color: site-orange
+  .project-box
+    
+    a
+      padding: 10px
+      display: block
+      border: 1px solid transparent
+      color: #505050
+      
+      &:hover
+        border: 1px solid site-orange
+     
+      p
+        display: block
+        margin: 10px 0 0
+        text-align: center
+        font-family: 'Lato', 'helvetica', sans-serif
+        font-weight: 300
+
+  
+    
+
+    
+  
+

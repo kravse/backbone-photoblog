@@ -1,0 +1,96 @@
+doctype
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='styles/main.min.css')
+    link(rel='stylesheet', href='styles/libs.min.css')
+    link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400,900' rel='stylesheet' type='text/css')
+    //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
+  body.photos-page
+    <!--[if lt IE 8]>
+    p.browsehappy
+      | You are using an <strong>outdated</strong> browser.
+      | Please <a href="http://browsehappy.com/">upgrade your browser</a>
+      | to improve your experience.
+    <![endif]-->
+    ul.mobile-nav
+      
+      li.mobile.photo-item
+
+        a.logo(href="./#")
+          
+      li.about-item
+        
+        a(href="./#/about") About 
+
+      li.archive-item
+
+        a(href="./#/archive") Archive
+
+      li.project-item
+
+        a(href="./#/projects") Projects
+
+
+    .container.mobile-closed
+
+      ul.nav
+        
+        li.mobile.photo-item
+
+          a.logo(href="./")
+            
+        li.about-item
+          
+          a(href="./#/about") About 
+
+        li.archive-item
+
+          a(href="./#/archive") Archive
+
+        li.project-item
+
+          a(href="./#/projects") Projects
+
+        li.burger
+
+          a(href="javascript:void(0)") 
+
+            span
+
+        li.instagram.mobile
+
+          a(href="http://instagram.com/kravse", target="_blank") @<span class="show-for-medium-up">kravse</span>
+
+
+      .content
+    
+    include ./pages/about.jade
+    include ./pages/archive.jade
+    include ./pages/photos.jade
+    include ./pages/projects.jade
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script window.jQuery || document.write('<script src="scripts/vendor/jquery-1.10.2.min.js"><\/script>')
+    script(src='scripts/plugins.js')
+    script(src='scripts/libs.min.js')
+    script(src='scripts/main.min.js')
+    script(type="text/javascript").
+      App.init()
+
+    
+
+
+    //- Google Analytics: change UA-XXXXX-X to be your site's ID.
+    //-
+      script
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
