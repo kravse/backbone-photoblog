@@ -1,7 +1,10 @@
 
 <script type="text/template" id="photos">
   <div class="image standard-width" style="background-image: url('http://jaredkrau.se/img/gal/<%= photoURL %>');">
-    <a class="arrow arrow-left" href="/#photos/<%= id - 1 %>"></a>
-    <a class="arrow arrow-right" href="/#photos/<%= id + 1 %>"></a>
+    <% if(arrow != 'left'){ %>
+      <a class="arrow arrow-left" href="/newsite/#photos/<%= id - 1 %>"></a>
+    <% } if(arrow != 'right'){ %>
+      <a class="arrow arrow-right" href="/newsite/#photos/<%= id + 1 %>"></a>
+    <% } %>
   </div>
 </script>

@@ -161,6 +161,7 @@ Photos = Backbone.View.extend(
   el: ".content"
 
   init: (options) ->
+    @arrow = ''
     $('body').attr('class', 'photo-page');
     @id = parseInt(photos.length-1)
     @photoURL = photos[photos.length-1].code
@@ -170,12 +171,17 @@ Photos = Backbone.View.extend(
       if parseInt(options.id, 10) && photoID<photos.length && photoID>0
         @photoURL = photos[options.id].code
         @id = parseInt(options.id)
-    
+  
+    if @id == photos.length-1
+      @arrow = 'right'
+    else if @id == 1
+      @arrow = 'left'
+
     @render()
 
   render: ->
     template = _.template($("#photos").html())
-    this.$el.html(template(photoURL: @photoURL, id : @id))
+    this.$el.html(template(photoURL: @photoURL, id : @id, arrow: @arrow))
     return
 )
 

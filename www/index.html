@@ -18,9 +18,9 @@
     </p><![endif]-->
     <ul class="mobile-nav">
       <li class="mobile photo-item"><a href="./#" class="logo"></a></li>
-      <li class="about-item"><a href="./#/about">About </a></li>
-      <li class="archive-item"><a href="./#/archive">Archive</a></li>
-      <li class="project-item"><a href="./#/projects">Projects</a></li>
+      <li class="about-item"><a href="/newsite/#/about">About </a></li>
+      <li class="archive-item"><a href="/newsite/#/archive">Archive</a></li>
+      <li class="project-item"><a href="/newsite/#/projects">Projects</a></li>
     </ul>
     <div class="container mobile-closed"><a href="javascript:void(0)" class="cover"></a>
       <ul class="nav">
@@ -43,14 +43,14 @@
     <script type="text/template" id="archive">
       <div class="archive standard-width">
         <% if(arrow != 'left'){ %>
-          <a class="arrow arrow-left" href="/#/archive/<%= id - 1%>"></a>
+          <a class="arrow arrow-left" href="/newsite/#/archive/<%= id - 1%>"></a>
         <% } if(arrow != 'right'){ %>
-          <a class="arrow arrow-right" href="/#/archive/<%= id + 1%>"></a>
+          <a class="arrow arrow-right" href="/newsite/#/archive/<%= id + 1%>"></a>
         <% } %>
         <div class="row archive-content">
           <% for(var i=0; i<photoArr.length; i++){ %>
             <div class="columns archive-pod small-6 medium-4 large-3"> 
-              <a href="/#/photos/<%= linkArr[i] %>" class="image-container" target="_blank"><img src="http://jaredkrau.se/img/thumbnails/<%=photoArr[i]%>"></a>
+              <a href="/newsite/#/photos/<%= linkArr[i] %>" class="image-container" target="_blank"><img src="http://jaredkrau.se/img/thumbnails/<%=photoArr[i]%>"></a>
             </div>
           <% } %>
         </div>
@@ -58,8 +58,11 @@
     </script>
     <script type="text/template" id="photos">
       <div class="image standard-width" style="background-image: url('http://jaredkrau.se/img/gal/<%= photoURL %>');">
-        <a class="arrow arrow-left" href="/#photos/<%= id - 1 %>"></a>
-        <a class="arrow arrow-right" href="/#photos/<%= id + 1 %>"></a>
+        <% if(arrow != 'left'){ %>
+          <a class="arrow arrow-left" href="/newsite/#photos/<%= id - 1 %>"></a>
+        <% } if(arrow != 'right'){ %>
+          <a class="arrow arrow-right" href="/newsite/#photos/<%= id + 1 %>"></a>
+        <% } %>
       </div>
     </script>
     <script type="text/template" id="projects">
@@ -92,7 +95,7 @@
             </a>
           </div>
           <div class="columns small-12 medium-6 large-4 project-box">
-            <a href="" style="background-image:url('./images/projects/Portfolio/thumbnails/11.jpg');">
+            <a href="" style="background-image:url('./images/projects/portfolio/thumbnails/11.jpg');">
               <p>Portfolio</p>
             </a>
           </div>
@@ -101,7 +104,6 @@
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="scripts/plugins.js"></script>
     <script src="scripts/libs.min.js"></script>
     <script src="scripts/main.min.js"></script>
     <script type="text/javascript">
