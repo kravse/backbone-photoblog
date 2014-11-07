@@ -45,7 +45,7 @@ paths           =
     scripts       : './src/scripts/**/*.coffee'
     styles        : './src/styles/styles.styl'
     images        : './src/images/**/*.{gif,png,jpeg,jpg}'
-    templates     : './src/**/*.jade'
+    templates     : ['./src/**/*.jade', '!./src/pages/*.jade']
     foundation    :
       javascript  : './bower_components/foundation/js/foundation.js'
       css         : './bower_components/foundation/css/foundation.css'

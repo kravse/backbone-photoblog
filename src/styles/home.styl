@@ -1,0 +1,73 @@
+.home
+  
+  .image.standard-width
+    background-position: center top
+    background-size: contain
+    background-repeat: no-repeat
+    height: 90%
+    
+    +media('mobile')
+      width: 100%
+      left: 0
+      margin-left: 0
+    
+
+  .arrow.mobile-hidden
+    
+    span
+      
+      +media('mobile')
+        opacity: 0
+      
+      
+  .arrow
+    
+    +media('max', 1125px)
+      top: 150px
+    
+    +media('mobile')
+      position: absolute
+      background-image: none
+      height: 100%
+      opacity: 0.9
+      width: 50%
+      top: 15px
+      
+  
+  .arrow-left
+    
+    span
+      transition: opacity 0.5s ease-in-out
+
+      +media('mobile')
+        display: block
+        position: absolute
+        top: 100px
+        left: 0
+        width: 64px
+        opacity: 1
+        height: 64px
+        background-image: url('../images/arrows.png')
+        background-size: 128px
+        background-repeat: no-repeat
+        background-position: 0 -64px
+
+  .arrow-right
+    
+    span
+      transition: opacity 0.5s ease-in-out
+            
+      +media('mobile')
+        display: block
+        position: absolute
+        opacity: 1
+        top: 100px
+        right: 0
+        width: 64px
+        height: 64px
+        background-image: url('../images/arrows.png')
+        background-size: 128px
+        background-repeat: no-repeat
+        background-position: 0 -64px
+        background-position: -64px -64px
+      

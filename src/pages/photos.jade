@@ -1,8 +1,14 @@
 script(type="text/template" id="photos").
-  <div class="image standard-width" style="background-image: url('http://jaredkrau.se/img/gal/<%= photoURL %>');">
-    <% if(arrow != 'left'){ %>
-      <a class="arrow arrow-left" href="/#photos/<%= id - 1 %>"></a>
-    <% } if(arrow != 'right'){ %>
-      <a class="arrow arrow-right" href="/#photos/<%= id + 1 %>"></a>
-    <% } %>
+  <div class="home">
+    <div class="image standard-width" style="background-image: url('http://jaredkrau.se/img/gal/<%= photoURL %>');">
+      <% if(arrow != 'left'){ %>
+        <a class="arrow arrow-left" href="/#photos/<%= id - 1 %>">
+          <span></span>
+        </a>
+      <% } if(arrow != 'right'){ %>
+        <a class="arrow arrow-right" href="/#photos/<%= id + 1 %>">
+          <span></span>
+        </a>
+      <% } %>
+    </div>
   </div>

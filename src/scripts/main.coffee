@@ -161,11 +161,16 @@ Photos = Backbone.View.extend(
   el: ".content"
 
   init: (options) ->
+    $('.home .arrow').removeClass 'mobile-hidden'
+    setTimeout (->
+      $('.home .arrow').addClass 'mobile-hidden'
+      return
+    ), 2000
+
     @arrow = ''
     $('body').attr('class', 'photo-page');
     @id = parseInt(photos.length-1)
     @photoURL = photos[photos.length-1].code
-
     if(options.id)
       photoID = parseInt(options.id, 10)
       if parseInt(options.id, 10) && photoID<photos.length && photoID>0
