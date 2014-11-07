@@ -76,7 +76,6 @@ App =
       return
 
     Backbone.history.start()
-      # {pushState: true, root: "/"})  
 
   setArrows: (whichGal, imgNum) ->
     galLen = $("."+whichGal+" .gallery-image").length
@@ -90,9 +89,6 @@ App =
       next = 1
     else
       next = parseInt(imgNum) + 1
-
-    console.log('prev', prev)
-    console.log('next', next)
 
     $('.gallery .arrow-right').attr('data-link', next).attr('data-which', whichGal)
     $('.gallery .arrow-left').attr('data-link', prev).attr('data-which', whichGal)
@@ -109,155 +105,17 @@ App =
           left: "0"
         , 500
 
-Router = Backbone.Router.extend(
-  routes:
-    "(/)" : "home"
-    "archive(/)": "archive"
-    "archive(/):id(/)": "archive"
-    "gallery(/)": "gallery"
-    "gallery/:id(/)": "gallery"
-    "photos(/)": "photos"
-    "photos/:id(/)": "photos"
-    "projects(/)": "projects"
-    "about(/)": "about"
-)
+  preload: (id) ->
 
+    for i in [id-5..id+5] by 1
+      if(i <= photosJson.length && i != id && i>=0)
+        img = new Image();
+        img.src = ('http://jaredkrau.se/img/gal/'+photosJson[i-1].code);
 
-Users = Backbone.Collection.extend(url: "/")
-
-Archive = Backbone.View.extend(
-  el: ".content"
-  init: (options) ->
-
-    $('body').attr('class', 'archive-page')
-
-    @photoArr = []
-    @linkArr = []
-    split = Math.floor(photosJson.length/24)
-    extras = false
-
-    if(Math.floor(photosJson.length%24)!= 0)
-      split = split+1
-      extras = true
-
-    @arrow = ''
-    top = 24
-    bottom = 1
-
-    if parseInt(options.id, 10) 
-      @id = Math.floor(options.id)
-      if @id >= split
-        @id = split
-      else if @id <= 1
-        @id = 1
-    else
-      @id = split
-
-    if @id == split
-      @arrow = 'right'
-    else if @id == 1
-      @arrow = 'left'
-
-    top = photosJson.length-((split-@id)*24)-1
-    bottom = top - 23
-
-    if extras && @id == 1
-      top = photosJson.length%24-1
-      bottom = 1
-
-    for i in [bottom..top] by 1
-      @linkArr.push(i)
-      @photoArr.push(photosJson[i].code)
+  preloadArchive: (id) ->
+    for i in [photosJson.length-24..photosJson.length] by 1
+      if(i <= photosJson.length && i >= 0)
+        img = new Image();
+        img.src = ('http://jaredkrau.se/img/thumbnails/'+photosJson[i-1].code);
     
-    @render()
-
-  render: ->
-    console.log('inarchive')
-    template = _.template($("#archive").html())
-    this.$el.html(template(photoArr : @photoArr, linkArr: @linkArr, id: @id, arrow: @arrow))
-    return
-)
-
-Projects = Backbone.View.extend(
-  el: ".content"
-
-  init: (id) ->
-    $('body').attr('class', 'project-page');
-    @render()
-
-  render: ->
-    template = _.template($("#projects").html())
-    this.$el.html(template())
-    return
-)
-
-About = Backbone.View.extend(
-  el: ".content"
-
-  init: ->
-    $('body').attr('class', 'about-page')
-    @render()
-
-  render: ->
-    template = _.template($("#about").html())
-    this.$el.html(template())
-    return
-)
-Gallery = Backbone.View.extend(
-  el: ".content"
-  init: (options)->
-    gals = ['colours', 'southeast', 'india', 'labour', 'days', 'portfolio']
-    if(gals.indexOf(options.id) == -1)
-      router = new Backbone.Router()
-      router.navigate('/projects', {trigger: true})
-      return
-
-    $('body').attr('class', 'gallery-page')
-    @id = options.id + '-page'
-    @render()
-
-  render: ->
-    template = _.template($("#gallery").html())
-    this.$el.html(template(id: @id))
-    return
-)
-
-Home = Backbone.View.extend(
-  init: (id) ->
-    router = new Backbone.Router()
-    router.navigate('/photos', {trigger: true})
-)
-
-Photos = Backbone.View.extend(
-  el: ".content"
-
-  init: (options) ->
-    $('.home .arrow').removeClass 'mobile-hidden'
-    setTimeout (->
-      $('.home .arrow').addClass 'mobile-hidden'
-      return
-    ), 2000
-
-    @arrow = ''
-    $('body').attr('class', 'photo-page');
-    @id = parseInt(photosJson.length-1)
-    @photoURL = photosJson[photosJson.length-1].code
-    if(options.id)
-      photoID = parseInt(options.id, 10)
-      if parseInt(options.id, 10) && photoID<photosJson.length && photoID>0
-        @photoURL = photosJson[options.id].code
-        @id = parseInt(options.id)
-  
-    if @id == photosJson.length-1
-      @arrow = 'right'
-    else if @id == 1
-      @arrow = 'left'
-
-    @render()
-
-  render: ->
-    template = _.template($("#photos").html())
-    this.$el.html(template(photoURL: @photoURL, id : @id, arrow: @arrow))
-    return
-)
 
