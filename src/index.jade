@@ -10,6 +10,7 @@ html.no-js
     link(rel='stylesheet', href='styles/libs.min.css')
     link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400,900' rel='stylesheet' type='text/css')
     //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
+
   body.photos-page
     <!--[if lt IE 8]>
     p.browsehappy
@@ -72,6 +73,7 @@ html.no-js
       .content
     
     include ./pages/about.jade
+    include ./pages/gallery.jade
     include ./pages/archive.jade
     include ./pages/photos.jade
     include ./pages/projects.jade
@@ -81,10 +83,18 @@ html.no-js
     script(src='scripts/libs.min.js')
     script(src='scripts/main.min.js')
     script(type="text/javascript").
-      App.init()
-
-    
-
+      // $.ajax({
+      //     url : './php/start.php',
+      //     type : 'POST',
+      //     dataType : 'json',
+      //     success : function (result) {
+      //        App.init(result);
+      //     },
+      //     error : function () {
+      //        console.log("AJAX Error");
+      //     }
+      // });    
+      App.init();
 
     //- Google Analytics: change UA-XXXXX-X to be your site's ID.
     //-
