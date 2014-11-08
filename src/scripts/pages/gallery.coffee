@@ -1,7 +1,7 @@
 Gallery = Backbone.View.extend(
   el: ".content"
   init: (options)->
-    gals = ['colours', 'southeast', 'india', 'labour', 'days', 'portfolio']
+    gals = ['colours', 'southeast', 'india', 'labour', 'days', 'portfolio', 'bolivia']
     if(gals.indexOf(options.id) == -1)
       router = new Backbone.Router()
       router.navigate('/projects', {trigger: true})
