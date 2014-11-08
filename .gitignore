@@ -7,10 +7,15 @@
 *.o
 *.so
 
-# Files #
+# Images #
+###################
+
+/images/projects/*.jpg
+
+
+# WWW #
 ###################
 /www/*
-/src/images/projects/*
 
 
 # PHP #
