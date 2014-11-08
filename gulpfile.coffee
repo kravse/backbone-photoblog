@@ -44,6 +44,7 @@ paths           =
     default       : './src/'
     scripts       : './src/scripts/**/*.coffee'
     styles        : './src/styles/styles.styl'
+    favicon       : './src/favicon.ico'
     images        : './src/images/**/*.{gif,png,jpeg,jpg}'
     templates     : ['./src/**/*.jade', '!./src/pages/*.jade']
     foundation    :
@@ -100,6 +101,9 @@ gulp.task 'styles', () ->
 gulp.src('./src/php/**/*', {base: './src/'})
     .pipe(gulp.dest('./www/'))
 
+gulp.src('./src/favicon.ico', {base: './src/'})
+    .pipe(gulp.dest('./www/'))
+
 gulp.src('./src/upload/**/*', {base: './src/'})
     .pipe(gulp.dest('./www/'))
 
@@ -138,7 +142,6 @@ gulp.task 'scripts', () ->
     .pipe(uglify(auto:false))
     .pipe(gulp.dest(paths.build.scripts))
     .pipe(plugins.livereload( auto: false ))
-
 
 # --------------------------------------
 # Images Task
