@@ -83,18 +83,18 @@ html.no-js
     script(src='scripts/libs.min.js')
     script(src='scripts/main.min.js')
     script(type="text/javascript").
-      // $.ajax({
-      //     url : './php/start.php',
-      //     type : 'POST',
-      //     dataType : 'json',
-      //     success : function (result) {
-      //        App.init(result);
-      //     },
-      //     error : function () {
-      //        console.log("AJAX Error");
-      //     }
-      // });    
-      App.init();
+      $.ajax({
+           url : './php/start.php',
+           type : 'POST',
+           dataType : 'json',
+           success : function (result) {
+              App.init(result);
+           },
+           error : function () {
+              console.log("AJAX Error");
+           }
+       });    
+      //App.init();
       // App.preloadArchive();
 
     //- Google Analytics: change UA-XXXXX-X to be your site's ID.
