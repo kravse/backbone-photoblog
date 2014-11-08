@@ -3,12 +3,19 @@ html.no-js
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title
-    meta(name='description', content='')
+    title JaredKrau.se - A Photo Blog
+    meta(name='description', content='JaredKrau.se A Toronto based photoblog by Jared Krause')
+    meta(name="keyword", content='Jared Krause Photo Blog Photography Toronto Canada Photographer')
     meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(property='og:title', content='JaredKrau.se - A photoblog')
+    meta(property='og:image', content='http://jaredkrau.se/images/fb-image.png')
+    meta(property='og:site_name', content='JaredKrau.se - A Photoblog')
+    meta(property='og:description', content='Photos from Toronto and around the world, by street photographer Jared Krause.')
+    meta(property='og:url', content='http://jaredkrau.se')
+    meta(property='og:type', content='website')
     link(rel='stylesheet', href='styles/main.min.css')
     link(rel='stylesheet', href='styles/libs.min.css')
-    link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400,900' rel='stylesheet' type='text/css')
+    link(href='//fonts.googleapis.com/css?family=Lato:100,300,400,900' rel='stylesheet' type='text/css')
     //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
 
   body.photos-page
@@ -94,15 +101,12 @@ html.no-js
               console.log("AJAX Error");
            }
        });    
-      //App.init();
-      // App.preloadArchive();
 
-    //- Google Analytics: change UA-XXXXX-X to be your site's ID.
-    //-
-      script
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
+    script(type="text/javascript").
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-54414720-1', 'auto');
+      ga('send', 'pageview');
+
