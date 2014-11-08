@@ -7,11 +7,11 @@
 *.o
 *.so
 
-# Photos #
+# Files #
 ###################
-/www/images/gal/*
-/www/images/thumbnails/*
-/www/images/projects/*
+/www/*
+/src/images/projects/*
+
 
 # PHP #
 ###################
