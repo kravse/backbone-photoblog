@@ -1,9 +1,9 @@
 script(type="text/template" id="archive").
   <div class="archive standard-width">
     <% if(arrow != 'left'){ %>
-      <a class="arrow arrow-left" href="/#/archive/<%= id - 1%>"></a>
+      <a class="arrow arrow-left" href="/#/archive/<%= id + 1%>"></a>
     <% } if(arrow != 'right'){ %>
-      <a class="arrow arrow-right" href="/#/archive/<%= id + 1%>"></a>
+      <a class="arrow arrow-right" href="/#/archive/<%= id - 1%>"></a>
     <% } %>
     <div class="row archive-content">
       <% for(var i=photoArr.length-1; i>=0; i--){ %>

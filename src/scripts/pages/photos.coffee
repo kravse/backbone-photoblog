@@ -19,9 +19,9 @@ Photos = Backbone.View.extend(
         @id = parseInt(options.id)
   
     if @id == photosJson.length-1
-      @arrow = 'right'
-    else if @id == 1
       @arrow = 'left'
+    else if @id == 1
+      @arrow = 'right'
 
     @render()
 

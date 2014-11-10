@@ -27,9 +27,9 @@ Archive = Backbone.View.extend(
       @id = split
 
     if @id == split
-      @arrow = 'right'
-    else if @id == 1
       @arrow = 'left'
+    else if @id == 1
+      @arrow = 'right'
 
     top = photosJson.length-((split-@id)*24)-1
     bottom = top - 23
