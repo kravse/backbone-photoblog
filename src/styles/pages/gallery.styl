@@ -6,6 +6,43 @@
   .Bolivia
     display: block
 
+.tension-page
+  
+  .Tension
+    display: block
+    
+    [class*=column]+[class*=column]:last-child
+      float: none
+    
+    .tension-pod
+      margin-bottom: 30px
+      
+      +media('mobile')
+        margin-bottom: 0
+      
+      &:hover
+        border: 2px solid transparent
+      
+    .gallery-image
+      max-width: 600px
+      width: 100%
+      margin: 0 auto
+      height: 293px
+      background-size: 90%
+      background-position: center center
+      border: 2px solid transparent
+      
+      &:hover
+        border: 2px solid site-orange
+        
+        +media('mobile')
+          border: 2px solid transparent
+          
+      +media('mobile')
+        height: 0
+        padding-bottom: 50%
+        
+
 .india-page
   
   .India
