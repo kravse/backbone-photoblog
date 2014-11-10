@@ -7,6 +7,11 @@
 #uploads
   background-color:#222
   
+  .row.full-width
+    max-width: 100%
+    padding: 0
+    margin: 0
+  
   .hidden
     display:none
 
@@ -62,6 +67,9 @@
     color:#ff7700
     padding-top:30px
     text-decoration:none
+    
+    +media('mobile')
+      font-size: 20px
 
   .upload-link:hover
     color:#ddd
@@ -74,7 +82,10 @@
     border-bottom:1px solid #eee
   
   .archive-image-holder
-    margin-top:105px       
+    margin-top:105px  
+    
+  .button
+    padding: 8px 0     
 
   .button-link
     float:left
@@ -157,7 +168,8 @@
     -moz-box-shadow: inset 0px 0px 10px 0px #ddd
     box-shadow: inset 0px 0px 10px 0px #ddd
 
-  .editor
+  .editor.columns
+    padding: 0
     [class*="column"] + [class*="column"]:last-child 
       float: left
       position:relative
