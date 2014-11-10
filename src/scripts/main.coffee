@@ -23,12 +23,9 @@ App =
       
       App.setArrows(whichGal, imgNum)
 
-
     $(document).on 'click', '.gallery .arrow', ->
       $('.popup').css('background-image', 'url("./images/projects/'+$(this).attr('data-which')+'/gallery/'+$(this).attr('data-link')+'.jpg")')
       App.setArrows($(this).attr('data-which'), $(this).attr('data-link'))
-
-
 
     $(document).on 'click', '.popup', ->
       $('.popup').css('background-image', 'none')
