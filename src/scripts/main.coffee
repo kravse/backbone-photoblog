@@ -115,4 +115,3 @@ App =
         img = new Image();
         img.src = ('http://jaredkrau.se/img/thumbnails/'+photosJson[i-1].code);
     
-

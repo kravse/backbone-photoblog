@@ -1,7 +1,7 @@
 <?php 
 
     include 'login.php';
-
+    
     $json = array();
     $link = mysqli_connect($host, $user, $pass, $db) or die("Error " . mysqli_error($link));
     $result = mysqli_query ($link, 'SELECT * FROM '.$table.' ORDER BY datetime');

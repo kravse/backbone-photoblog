@@ -8,7 +8,6 @@ Archive = Backbone.View.extend(
     @linkArr = []
     split = Math.floor(photosJson.length/24)
     extras = false
-
     if(Math.floor(photosJson.length%24)!= 0)
       split = split+1
       extras = true
@@ -31,11 +30,11 @@ Archive = Backbone.View.extend(
     else if @id == 1
       @arrow = 'right'
 
-    top = photosJson.length-((split-@id)*top)-1
-    bottom = top - top-1
+    top = photosJson.length-((split-@id)*24)-1
+    bottom = top - 23
 
     if extras && @id == 1
-      top = photosJson.length%top-1
+      top = photosJson.length%24-1
       bottom = 1
 
     for i in [bottom..top] by 1
