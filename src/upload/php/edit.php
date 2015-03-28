@@ -1,10 +1,9 @@
 <?php 
 
 	include '../../php/login.php';
-	
 	$action = $_POST['action'];
 	$id = $_POST['id'];
-	$text = $_POST['text'];
+	$text = htmlentities($_POST['text']);
 	
 	//count current amount of entrys in database.
 	$link = mysqli_connect($host, $user, $pass, $db) or die("Error " . mysqli_error($link));

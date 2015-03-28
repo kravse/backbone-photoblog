@@ -65,7 +65,6 @@ var UploadContent = (function(){
             var action = $('#popup-confirm').data('action');
             var index = $('#popup-confirm').data('index');
             var text = $('#edit-text').val();
-            console.log(text);
             $.ajax({
               url : '/upload/php/edit.php',
               type : 'POST',
@@ -92,14 +91,14 @@ var UploadContent = (function(){
             $('.popup').removeClass('hidden');
             $('#grey').removeClass('hidden');
             $('#uploads').addClass('body-limit');
-            $('#popup-confirm').data('index', which).data('action', 'edit');
+            $('#popup-confirm').attr('data-index', which).attr('data-action', 'edit');
             $('.popup-text').html('').append('<h2>TEXT CHANGE</h2><h3>OLD:</h3><span><i>'+jsonArray[which].about+'</i></span><br><h3>NEW:</h3><textarea id="edit-text">'+text+'</textarea><br><h2></h2>');
         }else if(action=="delete"){
             $('.popup-thumb').attr('src', '../img/thumbnails/'+jsonArray[which].code);
             $('.popup').removeClass('hidden');
             $('#grey').removeClass('hidden');
             $('#uploads').addClass('body-limit');
-            $('.popup-confirm').data('index', which).data('action', 'delete');
+            $('.popup-confirm').attr('data-index', which).attr('data-action', 'delete');
             $('.popup-text').html('').append('<h2>DELETE THIS PHOTO?</h2>');
 
         }else{

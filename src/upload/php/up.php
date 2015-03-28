@@ -3,7 +3,7 @@
 	$temp = explode(".", $_FILES["file"]["name"]);
 	$extension = end($temp);
 
-	$words = $_POST["text"];
+	$words = htmlentities($_POST["text"]);
 	
 	if ((($_FILES["file"]["type"] == "image/jpeg")
 	|| ($_FILES["file"]["type"] == "image/jpg")

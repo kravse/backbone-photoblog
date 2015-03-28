@@ -9,7 +9,7 @@ Photos = Backbone.View.extend(
     ), 2000
 
     @arrow = ''
-    $('body').attr('class', 'photo-page');
+    $('body').attr('class', 'photo-page')
     @id = parseInt(photosJson.length-1)
     @photoURL = photosJson[photosJson.length-1].code
     @aboutText = photosJson[photosJson.length-1].about
