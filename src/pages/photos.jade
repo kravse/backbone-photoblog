@@ -1,6 +1,8 @@
 script(type="text/template" id="photos").
   <div class="home">
-    <div class="image standard-width" style="background-image: url('http://jaredkrau.se/img/gal/<%= photoURL %>');">
+    <div class="image standard-width"><!--style="background-image: url('http://jaredkrau.se/img/gal/<%= photoURL %>');"-->
+      <img src="http://jaredkrau.se/img/gal/<%= photoURL %>">
+
       <% if(arrow != 'left'){ %>
         <a class="arrow arrow-left" href="/#photos/<%= id + 1 %>">
           <span></span>
@@ -11,4 +13,13 @@ script(type="text/template" id="photos").
         </a>
       <% } %>
     </div>
+    <% if(aboutText != ''){ %>
+      <div class="home-about-text">
+        <div class="about-text-inner">
+          <p><%= aboutText %></p>
+
+          <a class="hide-bottom-text" href="javascript:void(0)"></a>
+        </div>
+      </div>
+    <% } %>
   </div>

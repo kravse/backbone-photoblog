@@ -12,10 +12,13 @@ Photos = Backbone.View.extend(
     $('body').attr('class', 'photo-page');
     @id = parseInt(photosJson.length-1)
     @photoURL = photosJson[photosJson.length-1].code
+    @aboutText = photosJson[photosJson.length-1].about
+
     if(options.id)
       photoID = parseInt(options.id, 10)
       if parseInt(options.id, 10) && photoID<photosJson.length && photoID>0
         @photoURL = photosJson[options.id].code
+        @aboutText = photosJson[options.id].about
         @id = parseInt(options.id)
   
     if @id == photosJson.length-1
@@ -27,7 +30,7 @@ Photos = Backbone.View.extend(
 
   render: ->
     template = _.template($("#photos").html())
-    this.$el.html(template(photoURL: @photoURL, id : @id, arrow: @arrow))
+    this.$el.html(template(photoURL: @photoURL, aboutText: @aboutText, id : @id, arrow: @arrow))
     App.preload(@id)
     return
 )
