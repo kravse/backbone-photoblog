@@ -125,7 +125,26 @@
     width: 100%
     height: 100%
     opacity: 0.9
+    cursor: pointer
     z-index: 1
+    
+  .popup-close
+    position: fixed
+    display: none
+    background-image: url('../img/x.png')
+    background-position: center center
+    background-size: contain
+    right: 10px
+    top: 54px
+    width: 30px
+    height: 30px
+    z-index: 1
+    
+    &:hover
+      opacity: 0.8
+      
+      +media('mobile')
+        opacity: 1
     
   .arrow.arrow-left
     background-position: 0 -64px
@@ -139,18 +158,33 @@
     z-index: 3
     opacity: 1
     
-.gallery.show-popup
+.show-popup
   
   .arrow.arrow-left
     display: block
+    
+    &:hover
+      opacity: 0.8
+      
+      +media('mobile')
+        opacity: 1
   
   .arrow.arrow-right
     display: block
+    
+    &:hover
+      opacity: 0.8
+      
+      +media('mobile')
+        opacity: 1
     
   .popup
     display: block  
   
   .popup-bg
+    display: block
+    
+  .popup-close
     display: block
     
 .gallery-image

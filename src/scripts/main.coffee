@@ -16,7 +16,7 @@ App =
     $(document).on 'click', '.gallery-image', ->
       imgNum = $(this).attr('data-img')
       whichGal = $(this).attr('data-which')
-      $('.gallery').addClass('show-popup')
+      $('body').addClass('show-popup')
       $('.popup').css('background-image', 'url("./images/projects/'+whichGal+'/gallery/'+imgNum+'.jpg")')
 
       galLen = $("."+whichGal+" .gallery-image").length
@@ -28,13 +28,17 @@ App =
       App.setArrows($(this).attr('data-which'), $(this).attr('data-link'))
 
     $(document).on 'click', '.popup', ->
-      $('.popup').css('background-image', 'none')
-      $('.gallery').removeClass('show-popup')
+      $('body').css('background-image', 'none')
+      $('body').removeClass('show-popup')
 
     $(document).on 'click', '.popup-bg', ->
       $('.popup').css('background-image', 'none')
-      $('.gallery').removeClass('show-popup')
+      $('body').removeClass('show-popup')
 
+    $(document).on 'click', '.popup-close', ->
+      $('.popup').css('background-image', 'none')
+      $('body').removeClass('show-popup')
+      
     $(document).on 'click', '.mobile-nav a', ->
       $(".container").attr('class', 'container mobile-closed').animate
           left: "0"
