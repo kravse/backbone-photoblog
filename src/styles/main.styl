@@ -41,6 +41,7 @@ body
     z-index: 5
 
 .mobile-nav
+  display: none
   position: fixed
   width: 180px
   height: 100%
@@ -51,6 +52,9 @@ body
   box-shadow: inset 3px 0px 9px 0px rgba(229, 229, 229, 0.75)
   padding: 10px
   
+  +media('mobile')
+    display: block
+    
   li
     display: block
     
