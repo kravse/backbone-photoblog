@@ -104,10 +104,12 @@ App =
   
   toggleNav: () ->
     if $(".container").hasClass('mobile-closed')
+      $('.mobile-nav').addClass('show-mobile-nav')
       $(".container").removeClass('mobile-closed').addClass('mobile-open').animate
           left: "-180px"
         , 500
     else 
+      $('.mobile-nav').removeClass('show-mobile-nav')
       $(".container").attr('class', 'container mobile-closed').animate
           left: "0"
         , 500
