@@ -22,6 +22,7 @@ body
 
   &.show-popup
     overflow: hidden
+    
 .pages
   display: none
 
@@ -83,6 +84,10 @@ body
       color: #505050
       padding-bottom: 1px
       
+.dark-theme
+  
+  .content
+    background: #000
     
 .content
   position: absolute
@@ -92,6 +97,7 @@ body
   height: 100%
   z-index: 2
   background: #fff
+  transition: background 0.3s ease
   
   +media('mobile')
     top: nav-height
@@ -139,7 +145,18 @@ body
     
     a
       border-bottom: 1px solid site-orange
+
+.dark-theme
   
+  .nav
+    background: #333
+    border-bottom: 1px solid #1B1B1B
+  
+    li
+      
+      a
+        color: #eee
+    
 .nav
   position: fixed
   width: 100%
@@ -150,6 +167,7 @@ body
   z-index: 5
   background: #f5f5f5
   border-bottom: 1px solid #e5e5e5
+  transition: background 0.3s ease, border 0.3s ease
   
   a.logo
     display: block
@@ -183,6 +201,7 @@ body
     
     +media('mobile')
       display: inline-block
+    
     a
       position: absolute
       display: block
@@ -284,7 +303,7 @@ body
       
       &:hover
         color:  site-orange
-  
+      
   li.instagram
     float: right
     margin-right: 11px
@@ -307,7 +326,50 @@ body
         
         +media('mobile')
           background-position: 0 0
+  
+  li.switch
+    float: right
+    
+    a
+      display: block
+      position: relative
+      width: 50px
+      height: 25px
+      margin-top: 10px
+      background: #505050
+      border-radius: 15px
+      border: 1px solid #333
+      transition: background 0.3s ease, border 0.3s ease
+      
+      span
+        display: block
+        position: absolute
+        height: 23px
+        width: 23px
+        border-radius: 15px
+        border: 3px solid #505050
+        top: 0
+        left: 50%
+        margin-left: -23px
+        background: #fff
+        transition: margin-left 0.3s ease, border 0.3s ease, background 0.3s ease
+
+.dark-theme
+  
+  .nav
+    
+    li.switch
+      
+      a
+        background: #fff
+        border: 1px solid #eee
+  
+        span
+          border: 3px solid #fff
+          background: #505050
+          margin-left: 0
         
+      
 .standard-width
   position: absolute
   top: 15px
