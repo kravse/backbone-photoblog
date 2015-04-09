@@ -148,6 +148,12 @@ body
 
 .dark-theme
   
+  .arrow-right
+    background-position: -64px -64px
+  
+  .arrow-left
+    background-position: 0 -64px
+    
   .nav
     background: #333
     border-bottom: 1px solid #1B1B1B
@@ -155,8 +161,19 @@ body
     li
       
       a
-        color: #eee
-    
+        color: site-orange
+        
+        &:hover
+          color: #fff
+      
+      &.instagram
+        
+        a
+          background-position: 0 -27px
+      
+    a.logo
+      background-position: 0 -24px
+      
 .nav
   position: fixed
   width: 100%
@@ -361,11 +378,11 @@ body
     li.switch
       
       a
-        background: #fff
-        border: 1px solid #eee
+        background: site-orange
+        border: 1px solid #E26900
   
         span
-          border: 3px solid #fff
+          border: 3px solid site-orange
           background: #505050
           margin-left: 0
         
